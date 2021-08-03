@@ -1,0 +1,12 @@
+{:source-paths
+ ["src/cljs"]
+
+ :dev-http
+ {8080 "target"}
+
+ :builds
+ {:app {:target     :browser
+        :output-dir "target/js/dist"
+        :asset-path "js/dist"
+        :modules    {:core {:entries [app.core]}}}}}
+
