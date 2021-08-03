@@ -1,4 +1,7 @@
-{:source-paths
+{:dependencies
+ [[cljs-http "0.1.46"]]
+ 
+ :source-paths
  ["src/cljs"]
 
  :dev-http
@@ -8,5 +11,8 @@
  {:app {:target     :browser
         :output-dir "target/js/dist"
         :asset-path "js/dist"
-        :modules    {:core {:entries [app.core]}}}}}
+        :modules    {:core {:entries [app.core]}}
+        
+        :closure-defines  {app.core/MUX_TOKEN_ID     #shadow/env "MUX_TOKEN_ID"
+                           app.core/MUX_TOKEN_SECRET #shadow/env "MUX_TOKEN_SECRET"}}}}
 
